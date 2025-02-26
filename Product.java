@@ -7,13 +7,13 @@ public class Product {
    private int maxStock;
    private int lowPercentage;
    
-   Product(String name, int currentStock, int maxStock) {
+   public Product(String name, double cost, int currentStock, int maxStock) {
       this.name = name;
       this.currentStock = currentStock;
       this.maxStock = maxStock;
       lowPercentage = 20;
    }
-   Product(String name, int currentStock, int maxStock, int lowPercentage) {
+   public Product(String name, double cost, int currentStock, int maxStock, int lowPercentage) {
       this.name = name;
       this.currentStock = currentStock;
       this.maxStock = maxStock;
@@ -63,4 +63,5 @@ public class Product {
    public void setLowPercentage(int newLowPercentage) {
       lowPercentage = newLowPercentage;
    }
+   
 }
