@@ -9,26 +9,40 @@ public class Product {
    
    public Product(String name, double cost, int currentStock, int maxStock) {
       this.name = name;
-      this.currentStock = currentStock;
-      this.maxStock = maxStock;
+      this.cost = cost; 
+      if (currentStock > maxStock) { //exceeding max capacity
+         this.currentStock = maxStock;
+         this.maxStock = maxStock;
+      }
+      else {
+         this.currentStock = currentStock;
+         this.maxStock = maxStock;
+      }
       lowPercentage = 20;
    }
    public Product(String name, double cost, int currentStock, int maxStock, int lowPercentage) {
       this.name = name;
-      this.currentStock = currentStock;
-      this.maxStock = maxStock;
+      this.cost = cost; 
+      if (currentStock > maxStock) { //exceeding max capacity
+         this.currentStock = maxStock;
+         this.maxStock = maxStock;
+      }
+      else {
+         this.currentStock = currentStock;
+         this.maxStock = maxStock;
+      }
       this.lowPercentage = lowPercentage;
    }
    
-   public int getStockPercentage() { //returns the current stock level as a whole percentage
-      return (int)(currentStock / maxStock);
+   public double getStockPercentage() { //returns the current stock level as a whole percentage
+      return (int)(((double)currentStock / (double)maxStock) * 10000.0) / 100.0;
    }
    public double increasePrice(double percentage) { //increases price based on percentage passed (ex. 0.5 = 50%)
-      cost += (cost*percentage);
+      cost = cost + (cost*percentage);
       return cost;
    }
    public double decreasePrice(double percentage) { //decreases price based on percentage passed (ex. 0.5 = 50%)
-      cost -= (cost*percentage);
+      cost = cost - (cost*percentage);
       return cost;
    }
    
@@ -63,5 +77,22 @@ public class Product {
    public void setLowPercentage(int newLowPercentage) {
       lowPercentage = newLowPercentage;
    }
-   
+   /*
+   public static void main (String[] args) {
+      //testing all parameter constructor
+      Product apple = new Product ("Apple", 3.5, 20, 30, 30);
+      //testing paramter w/ lowPercentage not passed and currentStock > maxStock
+      Product banana = new Product ("Banana", 4.5, 50, 20);
+      System.out.println("Current stock of bananas are: " + banana.getCurrentStock());
+      System.out.println("Max stock of bananas are: " + banana.getMaxStock()); 
+      System.out.println("Stock level of bananas is: " + banana.getStockPercentage()); 
+      System.out.println("Current stock of apples are: " + apple.getCurrentStock());
+      System.out.println("Max stock of apples are: " + apple.getMaxStock());
+      System.out.println("Stock level of apples is: " + apple.getStockPercentage());
+      
+      System.out.println("Current price of apples is: " + apple.getCost());
+      System.out.println("Increasing price of apples by 35% to " + apple.increasePrice(0.35));
+      System.out.println("Decreasing price of apples by 35%: to " + apple.decreasePrice(0.35));  
+  }
+  */
 }
