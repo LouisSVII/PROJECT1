@@ -6,40 +6,40 @@ public class Cashier {
    double salary;
    
    // Getter
-  public String getlastName() {
+  public String getLastName() {
     return this.lastName;
   }
 
   // setter
-  public void setlastName(String lastName) {
+  public void setLastName(String lastName) {
     this.lastName = lastName;
   }
    // Getter
-  public String getfirstName() {
+  public String getFirstName() {
     return this.firstName;
   }
 
   // Setter
-  public void setfirstName(String firstName ) {
+  public void setFirstName(String firstName ) {
     this.firstName = firstName;
   } 
   // Getter
-  public int getid() {
+  public int getId() {
     return this.id;
   }
 
   // Setter
-  public void setid(int id) {
+  public void setId(int id) {
     this.id = id;
   }
   
    // Getter
-  public double getsalary() {
+  public double getSalary() {
     return this.salary;
   }
 
   // Setter
-  public void setsalary(double salary) {
+  public void setSalary(double salary) {
     this.salary = salary;
   }
    
