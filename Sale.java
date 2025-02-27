@@ -25,6 +25,7 @@ public class Sale {
         this.dayOfSale = dayOfSale;
         this.monthOfSale = monthOfSale;
         this.yearOfSale = yearOfSale;
+        makingSale.incrementPurchase(); //Increments purchasesMade for customer when an instance of Sale is created
     }
     
     public int numberOfProductsSold() {
