@@ -1,19 +1,5 @@
 package Cashier;
 
-/*String firstName 
-String lastName 
-int id 
-int salary 
---------------------------------------------------------------------------------------------------------------- 
-Cashier(id: int, firstName: String, lastName: String, job: String, salary: int) 
-void increaseSalary (percent: double) //increases the salary of the cashier by a percentage 
-*/
-
-// CSCI 280
-// Johnny Caulder
-// Assignment 5
-// 02/14
-
 public class Cashier {
    private String firstName, lastName;
    private int id;
@@ -24,7 +10,7 @@ public class Cashier {
     return this.lastName;
   }
 
-  // Setter
+  // setter
   public void setlastName(String lastName) {
     this.lastName = lastName;
   }
@@ -67,9 +53,10 @@ public class Cashier {
    public void increaseSalary (double percent){ //increases the salary of the cashier by a percentage
          salary = salary + (salary*percent)/100;
    }
+   /*
    public static void main(String[] args) {
          Cashier a = new Cashier(0, "bob", "ban", 10);
          a.increaseSalary(20);
          System.out.printf("%.2f", a.getsalary());
-   }
-   }
+   } */
+}
