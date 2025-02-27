@@ -16,11 +16,12 @@ void increaseSalary (percent: double) //increases the salary of the cashier by a
 
 public class Cashier {
    private String firstName, lastName;
-   private int id, salary;
+   private int id;
+   double salary;
    
    // Getter
   public String getlastName() {
-    return this.Lastname;
+    return this.lastName;
   }
 
   // Setter
@@ -29,7 +30,7 @@ public class Cashier {
   }
    // Getter
   public String getfirstName() {
-    return this.firstname;
+    return this.firstName;
   }
 
   // Setter
@@ -47,23 +48,28 @@ public class Cashier {
   }
   
    // Getter
-  public int getsalary() {
+  public double getsalary() {
     return this.salary;
   }
 
   // Setter
-  public void setsalary(String salary) {
+  public void setsalary(double salary) {
     this.salary = salary;
   }
    
-   public Cashier(int id, String firstName, String lastName, int salary){
+   public Cashier(int id, String firstName, String lastName, double salary){
    this.id = id;
    this.firstName = firstName;
    this.lastName = lastName;
    this.salary = salary;
    }
- 
-   void increaseSalary (double percent){ //increases the salary of the cashier by a percentage
-         salary += (salary*percent);
+
+   public void increaseSalary (double percent){ //increases the salary of the cashier by a percentage
+         salary = salary + (salary*percent)/100;
+   }
+   public static void main(String[] args) {
+         Cashier a = new Cashier(0, "bob", "ban", 10);
+         a.increaseSalary(20);
+         System.out.printf("%.2f", a.getsalary());
    }
    }
